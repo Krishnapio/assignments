@@ -1,0 +1,90 @@
+<div class="row  my-4 py-3 tempform">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-12 px-5">
+
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+            <h4 class="mb-3">Compressive Strength:</h4>
+            <div class="row mb-4">
+                <div class="col-md-6 form-floating" > 
+                    <span><label class="form-label" for="cs1">CS 25%</label></span>
+                    <input type="number" class="form-control" id="cs1" name="cs1" placeholder="0" min="0" ngModel required>  
+                </div>
+                <div class="col-md-6 form-floating ">
+                    <span><label class="form-label" for="cs2">CS 65%</label></span>
+                    <input type="number" class="form-control" id="cs2" name="cs2" placeholder="0" min="0" ngModel required>   
+                </div>
+            </div>
+            
+            <h4>Compressive Test:</h4>
+            <div class="row text-center fw-bold">
+                <div class="col-md-2">Values</div>
+                <div class="col-md-5">Before</div>
+                <div class="col-md-5">After</div>
+            </div>
+            <hr>
+
+            <div class="row form-group mb-3">
+                <label  class="col-sm-12 col-md-2 col-form-label text-center">Test # 1</label>
+                <div class="col-sm-12 col-md-5 small"> 
+                     <input type="number" class="form-control" id="value1before" name="value1before" placeholder="value before" min="0" ngModel [(ngModel)]="value1before" >
+                </div>
+                <div class="col-sm-12 col-md-5 small">
+                    <input type="number" class="form-control" id="value1after" name="value1after" placeholder="value after" min="0"  ngModel [(ngModel)]="value1after">
+                </div>
+            </div>
+            <div class="row form-group mb-3">
+                <label  class="col-md-2 col-form-label text-center">Test # 2</label>
+                <div class="col-md-5 small"> 
+                    <input type="number" class="form-control" id="value2before" name="value2before" placeholder="value before" min="0" ngModel [(ngModel)]="value2before" >
+                </div>
+                <div class="col-md-5 small">
+                    <input type="number" class="form-control" id="value2after" name="value2after" placeholder="value after" min="0" ngModel [(ngModel)]="value2after">
+                </div>
+            </div>
+            <div class="row form-group mb-3">
+                <label  class="col-md-2 col-form-label text-center">Test # 3</label>
+                <div class="col-md-5 small"> 
+                    <input type="number" class="form-control" id="value3before" name="value3before" placeholder="value before" min="0" ngModel [(ngModel)]="value3before" >
+                </div>
+                <div class="col-md-5 small">
+                    <input type="number" class="form-control" id="value3after" name="value3after" placeholder="value after" min="0" ngModel [(ngModel)]="value3after">
+                </div>
+            </div>
+            <div class="row form-group mb-3">
+                <label  class="col-md-2 col-form-label text-center">Test # 4</label>
+                <div class="col-md-5 small"> 
+                    <input type="number" class="form-control" id="value4before" name="value4before" placeholder="value before" min="0" ngModel [(ngModel)]="value4before" >
+                </div>
+                <div class="col-md-5 small">
+                    <input type="number" class="form-control" id="value4after" name="value4after" placeholder="value after" min="0" ngModel [(ngModel)]="value4after">
+                </div>
+            </div>
+            <div class="row form-group mb-3">
+                <label  class="col-md-2 col-form-label text-center">Average</label>
+                <div class="col-md-5 small"> 
+                    <input type="number" class="form-control" id="beforeavg" name="beforeavg" placeholder="avg before" min="0" [disabled]="disabledValue" ngModel value="{{avgbefore}}" >
+                </div>
+                <div class="col-md-5 small">
+                    <input type="number" class="form-control" id="afteravg" name="afteravg" placeholder="avg after"  min="0"  [disabled]="disabledValue" ngModel value="{{avgafter}}"  >
+                </div>
+            </div>
+            <div class="row form-group mb-3">
+                <label  class="col-md-2 col-form-label text-center">Compression set AVG.</label>
+                <div class="col-md-5 small"> 
+                    <input type="number" class="form-control" id="compavg" name="compavg" placeholder="avg comp" min="0"  [disabled]="disabledValue" ngModel value="{{avgcomp}}" required>
+                </div>
+            </div>
+              
+            <button class="btn btn-primary submit" type="submit" [disabled]="!userForm.valid" >Submit</button>
+
+        </form>   
+    </div>
+</div>
+
+<div class="row text-center" *ngIf="show">
+    <p>avgbefore: {{avgbefore}}</p>
+    <p>avgafter: {{avgafter}}</p>
+    <p>avg compression: {{avgcomp}}</p>
+</div>
+                
+            

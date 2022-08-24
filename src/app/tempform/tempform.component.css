@@ -1,0 +1,25 @@
+.form-floating span{
+    position: absolute;
+     top: -13px;
+     left: 27px;
+     background: white;
+     padding: 0 8px 0 8px;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+    box-shadow: 0 0 13px inset rgba(255, 0, 0, 0.09);
+}
+
+.submit{
+    margin-left: 20px;
+}
+@media (max-width: 575.98px) {
+    .small{
+        margin-bottom: 10px;;
+    }
+ }
+ @media (max-width: 991.98px) {
+    .col-md-8{
+        width: 100%;
+    } 
+ }
